@@ -6,6 +6,9 @@
     <tool name="Pin">
       <a name="appearance" val="classic"/>
     </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="east"/>
+    </tool>
   </lib>
   <lib desc="#Gates" name="1"/>
   <lib desc="#Plexers" name="2"/>
@@ -19,8 +22,8 @@
   <lib desc="#BFH-Praktika" name="10"/>
   <lib desc="#Input/Output-Extra" name="11"/>
   <lib desc="#Soc" name="12"/>
-  <lib desc="file#contadorY.circ" name="13"/>
-  <lib desc="file#contadorX.circ" name="14"/>
+  <lib desc="file#contadorX.circ" name="13"/>
+  <lib desc="file#contadorY.circ" name="14"/>
   <main name="GeneradorPixeles"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -59,26 +62,84 @@
     <a name="circuit" val="GeneradorPixeles"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(140,150)" name="Pin">
-      <a name="appearance" val="NewPins"/>
+    <comp lib="0" loc="(220,140)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Reset"/>
+    </comp>
+    <comp lib="0" loc="(220,240)" name="Tunnel">
+      <a name="facing" val="east"/>
       <a name="label" val="Clock"/>
     </comp>
-    <comp lib="0" loc="(360,170)" name="Pin">
+    <comp lib="0" loc="(240,170)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+    </comp>
+    <comp lib="0" loc="(240,190)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="initial" val="0x1"/>
+    </comp>
+    <comp lib="0" loc="(240,210)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Start"/>
+    </comp>
+    <comp lib="0" loc="(460,170)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="X"/>
       <a name="type" val="output"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(670,150)" name="Pin">
+    <comp lib="0" loc="(610,140)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Reset"/>
+    </comp>
+    <comp lib="0" loc="(610,240)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(630,170)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+    </comp>
+    <comp lib="0" loc="(630,190)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="initial" val="0x1"/>
+    </comp>
+    <comp lib="0" loc="(850,170)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
       <a name="label" val="Y"/>
       <a name="type" val="output"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="13" loc="(670,150)" name="contadorY"/>
-    <comp lib="14" loc="(360,150)" name="contadorX"/>
-    <wire from="(360,150)" to="(450,150)"/>
+    <comp lib="0" loc="(90,240)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Reset"/>
+    </comp>
+    <comp lib="0" loc="(90,240)" name="Tunnel">
+      <a name="label" val="Reset"/>
+    </comp>
+    <comp lib="0" loc="(90,270)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(90,270)" name="Tunnel">
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="13" loc="(460,150)" name="contadorX"/>
+    <comp lib="14" loc="(850,150)" name="contadorY"/>
+    <wire from="(220,140)" to="(230,140)"/>
+    <wire from="(220,240)" to="(230,240)"/>
+    <wire from="(230,140)" to="(230,150)"/>
+    <wire from="(230,150)" to="(240,150)"/>
+    <wire from="(230,230)" to="(230,240)"/>
+    <wire from="(230,230)" to="(240,230)"/>
+    <wire from="(460,150)" to="(550,150)"/>
+    <wire from="(550,150)" to="(550,210)"/>
+    <wire from="(550,210)" to="(630,210)"/>
+    <wire from="(610,140)" to="(620,140)"/>
+    <wire from="(610,240)" to="(620,240)"/>
+    <wire from="(620,140)" to="(620,150)"/>
+    <wire from="(620,150)" to="(630,150)"/>
+    <wire from="(620,230)" to="(620,240)"/>
+    <wire from="(620,230)" to="(630,230)"/>
   </circuit>
 </project>
