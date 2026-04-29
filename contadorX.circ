@@ -89,6 +89,7 @@
     <comp lib="5" loc="(210,150)" name="Counter">
       <a name="appearance" val="logisim_evolution"/>
       <a name="max" val="0xf"/>
+      <a name="trigger" val="falling"/>
       <a name="width" val="4"/>
     </comp>
     <wire from="(190,160)" to="(200,160)"/>
