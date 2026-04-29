@@ -61,13 +61,6 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Reset"/>
     </comp>
-    <comp lib="0" loc="(190,180)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-    </comp>
-    <comp lib="0" loc="(190,200)" name="Pin">
-      <a name="appearance" val="NewPins"/>
-      <a name="initial" val="0x1"/>
-    </comp>
     <comp lib="0" loc="(190,220)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Start"/>
@@ -76,6 +69,10 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Clock"/>
     </comp>
+    <comp lib="0" loc="(210,180)" name="Constant">
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(210,200)" name="Constant"/>
     <comp lib="0" loc="(400,200)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
@@ -95,8 +92,6 @@
       <a name="width" val="4"/>
     </comp>
     <wire from="(190,160)" to="(200,160)"/>
-    <wire from="(190,180)" to="(210,180)"/>
-    <wire from="(190,200)" to="(210,200)"/>
     <wire from="(190,220)" to="(210,220)"/>
     <wire from="(190,240)" to="(200,240)"/>
     <wire from="(200,160)" to="(200,170)"/>
