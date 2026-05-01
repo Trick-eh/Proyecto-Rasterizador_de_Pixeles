@@ -56,17 +56,39 @@
     <tool lib="5" name="Register"/>
   </toolbar>
   <circuit name="contadorX">
-    <a name="appearance" val="logisim_evolution"/>
+    <a name="appearance" val="custom"/>
     <a name="circuit" val="contadorX"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
     <a name="simulationFrequency" val="1.0"/>
-    <comp lib="0" loc="(190,160)" name="Pin">
+    <appear>
+      <rect fill="#ff85ec" height="90" stroke="#c047ad" width="150" x="50" y="50"/>
+      <polyline fill="none" points="40,60 50,60" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="40,90 50,90" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="40,120 50,120" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="210,80 200,80" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="210,100 200,100" stroke="#000000" stroke-width="2"/>
+      <text dominant-baseline="central" fill="#c047ad" font-family="SansSerif" font-size="12" text-anchor="middle" x="72" y="59">Enable</text>
+      <text dominant-baseline="central" fill="#c047ad" font-family="SansSerif" font-size="12" text-anchor="middle" x="69" y="89">Reset</text>
+      <text dominant-baseline="central" fill="#c047ad" font-family="SansSerif" font-size="12" text-anchor="middle" x="183" y="78">Carry</text>
+      <text dominant-baseline="central" fill="#c047ad" font-family="SansSerif" font-size="12" text-anchor="middle" x="193" y="100">X</text>
+      <polyline fill="none" points="50,113 60,120" stroke="#c047ad"/>
+      <polyline fill="none" points="50,126 60,120" stroke="#c047ad"/>
+      <text dominant-baseline="central" fill="#c047ad" font-family="SansSerif" font-size="12" text-anchor="middle" x="125" y="133">Cont X</text>
+      <rect fill="none" height="13" stroke="#c047ad" width="40" x="106" y="127"/>
+      <circ-anchor facing="east" x="200" y="90"/>
+      <circ-port dir="in" pin="190,170" x="40" y="90"/>
+      <circ-port dir="in" pin="190,220" x="40" y="60"/>
+      <circ-port dir="in" pin="190,240" x="40" y="120"/>
+      <circ-port dir="out" pin="400,200" x="210" y="80"/>
+      <circ-port dir="out" pin="410,260" x="210" y="100"/>
+    </appear>
+    <comp lib="0" loc="(190,170)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Reset"/>
     </comp>
     <comp lib="0" loc="(190,220)" name="Pin">
       <a name="appearance" val="NewPins"/>
-      <a name="label" val="Start"/>
+      <a name="label" val="Enable"/>
     </comp>
     <comp lib="0" loc="(190,240)" name="Pin">
       <a name="appearance" val="NewPins"/>
@@ -76,6 +98,10 @@
       <a name="value" val="0x0"/>
     </comp>
     <comp lib="0" loc="(210,200)" name="Constant"/>
+    <comp lib="0" loc="(210,260)" name="Constant">
+      <a name="value" val="0x0"/>
+      <a name="width" val="4"/>
+    </comp>
     <comp lib="0" loc="(400,200)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
@@ -94,11 +120,9 @@
       <a name="max" val="0xf"/>
       <a name="width" val="4"/>
     </comp>
-    <wire from="(190,160)" to="(200,160)"/>
+    <wire from="(190,170)" to="(210,170)"/>
     <wire from="(190,220)" to="(210,220)"/>
     <wire from="(190,240)" to="(200,240)"/>
-    <wire from="(200,160)" to="(200,170)"/>
-    <wire from="(200,170)" to="(210,170)"/>
     <wire from="(200,230)" to="(200,240)"/>
     <wire from="(200,230)" to="(210,230)"/>
     <wire from="(400,260)" to="(410,260)"/>
