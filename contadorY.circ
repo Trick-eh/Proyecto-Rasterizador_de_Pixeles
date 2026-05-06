@@ -73,7 +73,7 @@
       <text dominant-baseline="central" fill="#77c047" font-family="SansSerif" font-size="12" text-anchor="middle" x="192" y="100">Y</text>
       <polyline fill="none" points="50,112 58,120" stroke="#5fc021"/>
       <polyline fill="none" points="50,127 58,120" stroke="#5fc021"/>
-      <text dominant-baseline="central" fill="#5fc021" font-family="SansSerif" font-size="12" text-anchor="middle" x="124" y="132">Carry Y</text>
+      <text dominant-baseline="central" fill="#5fc021" font-family="SansSerif" font-size="12" text-anchor="middle" x="124" y="132">Cont Y</text>
       <rect fill="none" height="15" stroke="#5fc021" width="45" x="102" y="125"/>
       <circ-anchor facing="east" x="210" y="90"/>
       <circ-port dir="in" pin="170,120" x="40" y="90"/>
