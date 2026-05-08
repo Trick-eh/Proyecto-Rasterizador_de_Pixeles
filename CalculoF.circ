@@ -147,6 +147,10 @@
       <a name="label" val="F_in_R"/>
       <a name="width" val="16"/>
     </comp>
+    <comp lib="0" loc="(250,50)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="value" val="0x0"/>
+    </comp>
     <comp lib="0" loc="(280,110)" name="Tunnel">
       <a name="label" val="Primer_Paso"/>
     </comp>
@@ -348,6 +352,7 @@
     <wire from="(130,60)" to="(130,110)"/>
     <wire from="(220,220)" to="(230,220)"/>
     <wire from="(250,120)" to="(250,130)"/>
+    <wire from="(250,50)" to="(250,60)"/>
     <wire from="(260,280)" to="(260,290)"/>
     <wire from="(260,430)" to="(260,440)"/>
     <wire from="(290,220)" to="(300,220)"/>
