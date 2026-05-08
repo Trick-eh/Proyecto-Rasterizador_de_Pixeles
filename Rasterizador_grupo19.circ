@@ -26,9 +26,9 @@
   <lib desc="#BFH-Praktika" name="10"/>
   <lib desc="#Input/Output-Extra" name="11"/>
   <lib desc="#Soc" name="12"/>
-  <lib desc="file#GeneradorPixeles.circ" name="13"/>
+  <lib desc="file#CalculoF.circ" name="13"/>
   <lib desc="file#EvaluadorYRAM.circ" name="14"/>
-  <lib desc="file#CalculoF.circ" name="15"/>
+  <lib desc="file#GeneradorPixeles.circ" name="15"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -129,25 +129,25 @@
       <a name="facing" val="south"/>
       <a name="label" val="Start_D"/>
     </comp>
-    <comp lib="0" loc="(1160,290)" name="Tunnel">
-      <a name="label" val="Y"/>
-      <a name="width" val="4"/>
-    </comp>
     <comp lib="0" loc="(1160,380)" name="Tunnel">
       <a name="label" val="OFFSET"/>
       <a name="width" val="16"/>
+    </comp>
+    <comp lib="0" loc="(1170,290)" name="Tunnel">
+      <a name="label" val="Y"/>
+      <a name="width" val="4"/>
     </comp>
     <comp lib="0" loc="(1200,180)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="R_LED"/>
     </comp>
-    <comp lib="0" loc="(150,570)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="Clock"/>
-    </comp>
     <comp lib="0" loc="(150,70)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="south"/>
+      <a name="label" val="Clock"/>
+    </comp>
+    <comp lib="0" loc="(150,700)" name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="label" val="Clock"/>
     </comp>
     <comp lib="0" loc="(190,130)" name="Tunnel">
@@ -270,13 +270,13 @@
     <comp lib="0" loc="(770,210)" name="Tunnel">
       <a name="label" val="Start_D"/>
     </comp>
+    <comp lib="0" loc="(790,330)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Clock"/>
+    </comp>
     <comp lib="0" loc="(820,70)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="CortarRam"/>
-    </comp>
-    <comp lib="0" loc="(880,340)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="Clock"/>
     </comp>
     <comp lib="0" loc="(890,60)" name="Pin">
       <a name="appearance" val="NewPins"/>
@@ -310,10 +310,9 @@
     <comp lib="1" loc="(260,490)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="1" loc="(920,340)" name="NOT Gate"/>
-    <comp lib="13" loc="(380,180)" name="GeneradorPixeles"/>
+    <comp lib="13" loc="(430,340)" name="CalculoF"/>
     <comp lib="14" loc="(510,520)" name="EvaluadorYRAM"/>
-    <comp lib="15" loc="(430,340)" name="CalculoF"/>
+    <comp lib="15" loc="(380,180)" name="GeneradorPixeles"/>
     <comp lib="2" loc="(1070,330)" name="Demultiplexer">
       <a name="enable" val="true"/>
       <a name="facing" val="south"/>
@@ -351,29 +350,23 @@
     <comp lib="9" loc="(1400,370)" name="Text">
       <a name="text" val="entrada recibida con X como selector"/>
     </comp>
-    <comp lib="9" loc="(1411,429)" name="Text">
-      <a name="text" val="Habilitar la salida del DMUX en falling-edge"/>
-    </comp>
-    <comp lib="9" loc="(1412,558)" name="Text">
-      <a name="text" val="los valores correctos para las coordenadas actuales"/>
-    </comp>
-    <comp lib="9" loc="(1427,530)" name="Text">
-      <a name="text" val="por lo que habilitar solo en falling edge permite conocer"/>
-    </comp>
-    <comp lib="9" loc="(1437,481)" name="Text">
-      <a name="text" val="actuales con el resultado de la coordenada anterior ya que"/>
+    <comp lib="9" loc="(1410,425)" name="Text">
+      <a name="text" val="Habilitar la salida del DMUX con un retraso es "/>
     </comp>
     <comp lib="9" loc="(1450,345)" name="Text">
       <a name="text" val="Este DMUX determina a que columna pertenece la"/>
-    </comp>
-    <comp lib="9" loc="(1450,459)" name="Text">
-      <a name="text" val="es necesario ya que si no, prende pixeles en las coordenadas "/>
     </comp>
     <comp lib="9" loc="(1465,220)" name="Text">
       <a name="text" val="Genera un numero de 16 bits con un 1 en la posicion equivalente a Y"/>
     </comp>
     <comp lib="9" loc="(1465,505)" name="Text">
-      <a name="text" val="las coordenadas se actualizan mas rapido que el calculo del valor"/>
+      <a name="text" val="nuevos con resultados viejos."/>
+    </comp>
+    <comp lib="9" loc="(1470,455)" name="Text">
+      <a name="text" val="necesario ya que, debido a que el sumador toma mas tiempo en calcular f "/>
+    </comp>
+    <comp lib="9" loc="(1474,477)" name="Text">
+      <a name="text" val="que el generador de pixeles en pasar un nuevo x e y, la matriz prende pixeles"/>
     </comp>
     <comp lib="9" loc="(1485,250)" name="Text">
       <a name="text" val="debido a la codificon de la altitud de la matriz led empezando con 0 abajo "/>
@@ -384,6 +377,7 @@
     <comp lib="9" loc="(730,185)" name="Text">
       <a name="text" val="1 pulso de reloj mas tarde que el resto"/>
     </comp>
+    <comp loc="(900,330)" name="delayer"/>
     <wire from="(1000,370)" to="(1000,390)"/>
     <wire from="(1010,370)" to="(1010,390)"/>
     <wire from="(1020,370)" to="(1020,390)"/>
@@ -403,7 +397,7 @@
     <wire from="(1130,370)" to="(1130,390)"/>
     <wire from="(1140,370)" to="(1140,390)"/>
     <wire from="(1150,250)" to="(1150,280)"/>
-    <wire from="(1150,290)" to="(1160,290)"/>
+    <wire from="(1150,290)" to="(1170,290)"/>
     <wire from="(1150,380)" to="(1150,390)"/>
     <wire from="(1150,380)" to="(1160,380)"/>
     <wire from="(1170,190)" to="(1170,200)"/>
@@ -413,7 +407,7 @@
     <wire from="(150,210)" to="(200,210)"/>
     <wire from="(150,370)" to="(150,550)"/>
     <wire from="(150,370)" to="(200,370)"/>
-    <wire from="(150,550)" to="(150,570)"/>
+    <wire from="(150,550)" to="(150,700)"/>
     <wire from="(150,550)" to="(280,550)"/>
     <wire from="(150,70)" to="(150,210)"/>
     <wire from="(190,130)" to="(190,150)"/>
@@ -451,7 +445,6 @@
     <wire from="(760,210)" to="(770,210)"/>
     <wire from="(820,60)" to="(820,70)"/>
     <wire from="(820,60)" to="(880,60)"/>
-    <wire from="(880,340)" to="(890,340)"/>
     <wire from="(880,60)" to="(880,90)"/>
     <wire from="(880,60)" to="(890,60)"/>
     <wire from="(880,90)" to="(890,90)"/>
@@ -462,9 +455,7 @@
     <wire from="(90,520)" to="(270,520)"/>
     <wire from="(90,520)" to="(90,570)"/>
     <wire from="(90,70)" to="(90,180)"/>
-    <wire from="(920,340)" to="(930,340)"/>
-    <wire from="(930,330)" to="(930,340)"/>
-    <wire from="(930,330)" to="(980,330)"/>
+    <wire from="(900,330)" to="(980,330)"/>
     <wire from="(970,350)" to="(990,350)"/>
     <wire from="(980,330)" to="(980,340)"/>
     <wire from="(980,340)" to="(990,340)"/>
@@ -516,5 +507,158 @@
     </comp>
     <comp loc="(990,310)" name="main"/>
     <wire from="(590,400)" to="(600,400)"/>
+  </circuit>
+  <circuit name="delayer">
+    <a name="appearance" val="custom"/>
+    <a name="circuit" val="delayer"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="simulationFrequency" val="1.0"/>
+    <appear>
+      <rect fill="#380011" height="80" stroke="#7d5f1b" width="90" x="110" y="100"/>
+      <text dominant-baseline="central" fill="#7d5f1b" font-family="SansSerif" font-size="12" text-anchor="middle" x="154" y="172">Delayer</text>
+      <rect fill="none" height="14" stroke="#7d5f1b" width="45" x="132" y="166"/>
+      <polyline fill="#7d5f1b" points="144,130 164,150 144,150 164,130 145,130" stroke="#000000"/>
+      <polyline fill="none" points="110,140 100,140" stroke="#000000" stroke-width="2"/>
+      <polyline fill="none" points="200,140 210,140" stroke="#000000" stroke-width="2"/>
+      <text dominant-baseline="central" fill="#7d5f1b" font-family="SansSerif" font-size="12" text-anchor="middle" x="153" y="107">37△G</text>
+      <circ-anchor facing="east" x="210" y="140"/>
+      <circ-port dir="in" pin="130,150" x="100" y="140"/>
+      <circ-port dir="out" pin="790,310" x="210" y="140"/>
+    </appear>
+    <comp lib="0" loc="(1040,210)" name="Constant"/>
+    <comp lib="0" loc="(1100,150)" name="Constant"/>
+    <comp lib="0" loc="(1160,210)" name="Constant"/>
+    <comp lib="0" loc="(120,290)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Cont"/>
+    </comp>
+    <comp lib="0" loc="(1220,150)" name="Constant"/>
+    <comp lib="0" loc="(1280,210)" name="Constant"/>
+    <comp lib="0" loc="(130,150)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="Entry"/>
+    </comp>
+    <comp lib="0" loc="(130,330)" name="Constant"/>
+    <comp lib="0" loc="(1340,150)" name="Constant"/>
+    <comp lib="0" loc="(140,190)" name="Constant"/>
+    <comp lib="0" loc="(1400,210)" name="Constant"/>
+    <comp lib="0" loc="(1460,150)" name="Constant"/>
+    <comp lib="0" loc="(1520,210)" name="Constant"/>
+    <comp lib="0" loc="(1580,150)" name="Constant"/>
+    <comp lib="0" loc="(1640,210)" name="Constant"/>
+    <comp lib="0" loc="(1690,190)" name="Tunnel">
+      <a name="label" val="Cont"/>
+    </comp>
+    <comp lib="0" loc="(190,350)" name="Constant"/>
+    <comp lib="0" loc="(200,210)" name="Constant"/>
+    <comp lib="0" loc="(250,290)" name="Constant"/>
+    <comp lib="0" loc="(260,150)" name="Constant"/>
+    <comp lib="0" loc="(310,350)" name="Constant"/>
+    <comp lib="0" loc="(320,210)" name="Constant"/>
+    <comp lib="0" loc="(370,290)" name="Constant"/>
+    <comp lib="0" loc="(380,150)" name="Constant"/>
+    <comp lib="0" loc="(430,350)" name="Constant"/>
+    <comp lib="0" loc="(440,210)" name="Constant"/>
+    <comp lib="0" loc="(490,290)" name="Constant"/>
+    <comp lib="0" loc="(500,150)" name="Constant"/>
+    <comp lib="0" loc="(550,350)" name="Constant"/>
+    <comp lib="0" loc="(560,210)" name="Constant"/>
+    <comp lib="0" loc="(610,290)" name="Constant"/>
+    <comp lib="0" loc="(620,150)" name="Constant"/>
+    <comp lib="0" loc="(670,350)" name="Constant"/>
+    <comp lib="0" loc="(680,210)" name="Constant"/>
+    <comp lib="0" loc="(730,290)" name="Constant"/>
+    <comp lib="0" loc="(740,150)" name="Constant"/>
+    <comp lib="0" loc="(790,310)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="label" val="Delayed_Entry"/>
+      <a name="type" val="output"/>
+    </comp>
+    <comp lib="0" loc="(800,210)" name="Constant"/>
+    <comp lib="0" loc="(860,150)" name="Constant"/>
+    <comp lib="0" loc="(920,210)" name="Constant"/>
+    <comp lib="0" loc="(980,150)" name="Constant"/>
+    <comp lib="1" loc="(1030,170)" name="AND Gate"/>
+    <comp lib="1" loc="(1090,190)" name="AND Gate"/>
+    <comp lib="1" loc="(1150,170)" name="AND Gate"/>
+    <comp lib="1" loc="(1210,190)" name="AND Gate"/>
+    <comp lib="1" loc="(1270,170)" name="AND Gate"/>
+    <comp lib="1" loc="(1330,190)" name="AND Gate"/>
+    <comp lib="1" loc="(1390,170)" name="AND Gate"/>
+    <comp lib="1" loc="(1450,190)" name="AND Gate"/>
+    <comp lib="1" loc="(1510,170)" name="AND Gate"/>
+    <comp lib="1" loc="(1570,190)" name="AND Gate"/>
+    <comp lib="1" loc="(1630,170)" name="AND Gate"/>
+    <comp lib="1" loc="(1690,190)" name="AND Gate"/>
+    <comp lib="1" loc="(180,310)" name="AND Gate"/>
+    <comp lib="1" loc="(190,170)" name="AND Gate"/>
+    <comp lib="1" loc="(240,330)" name="AND Gate"/>
+    <comp lib="1" loc="(250,190)" name="AND Gate"/>
+    <comp lib="1" loc="(300,310)" name="AND Gate"/>
+    <comp lib="1" loc="(310,170)" name="AND Gate"/>
+    <comp lib="1" loc="(360,330)" name="AND Gate"/>
+    <comp lib="1" loc="(370,190)" name="AND Gate"/>
+    <comp lib="1" loc="(420,310)" name="AND Gate"/>
+    <comp lib="1" loc="(430,170)" name="AND Gate"/>
+    <comp lib="1" loc="(480,330)" name="AND Gate"/>
+    <comp lib="1" loc="(490,190)" name="AND Gate"/>
+    <comp lib="1" loc="(540,310)" name="AND Gate"/>
+    <comp lib="1" loc="(550,170)" name="AND Gate"/>
+    <comp lib="1" loc="(600,330)" name="AND Gate"/>
+    <comp lib="1" loc="(610,190)" name="AND Gate"/>
+    <comp lib="1" loc="(660,310)" name="AND Gate"/>
+    <comp lib="1" loc="(670,170)" name="AND Gate"/>
+    <comp lib="1" loc="(720,330)" name="AND Gate"/>
+    <comp lib="1" loc="(730,190)" name="AND Gate"/>
+    <comp lib="1" loc="(780,310)" name="AND Gate"/>
+    <comp lib="1" loc="(790,170)" name="AND Gate"/>
+    <comp lib="1" loc="(850,190)" name="AND Gate"/>
+    <comp lib="1" loc="(910,170)" name="AND Gate"/>
+    <comp lib="1" loc="(970,190)" name="AND Gate"/>
+    <comp lib="9" loc="(252,89)" name="Text">
+      <a name="text" val="Retarda la entrada 37 niveles de compuertas"/>
+    </comp>
+    <comp lib="9" loc="(600,87)" name="Text">
+      <a name="text" val="El sumadorGrupo19 posee 36 niveles"/>
+    </comp>
+    <wire from="(1030,170)" to="(1040,170)"/>
+    <wire from="(1090,190)" to="(1100,190)"/>
+    <wire from="(1150,170)" to="(1160,170)"/>
+    <wire from="(120,290)" to="(130,290)"/>
+    <wire from="(1210,190)" to="(1220,190)"/>
+    <wire from="(1270,170)" to="(1280,170)"/>
+    <wire from="(130,150)" to="(140,150)"/>
+    <wire from="(1330,190)" to="(1340,190)"/>
+    <wire from="(1390,170)" to="(1400,170)"/>
+    <wire from="(1450,190)" to="(1460,190)"/>
+    <wire from="(1510,170)" to="(1520,170)"/>
+    <wire from="(1570,190)" to="(1580,190)"/>
+    <wire from="(1630,170)" to="(1640,170)"/>
+    <wire from="(180,310)" to="(190,310)"/>
+    <wire from="(190,170)" to="(200,170)"/>
+    <wire from="(240,330)" to="(250,330)"/>
+    <wire from="(250,190)" to="(260,190)"/>
+    <wire from="(300,310)" to="(310,310)"/>
+    <wire from="(310,170)" to="(320,170)"/>
+    <wire from="(360,330)" to="(370,330)"/>
+    <wire from="(370,190)" to="(380,190)"/>
+    <wire from="(420,310)" to="(430,310)"/>
+    <wire from="(430,170)" to="(440,170)"/>
+    <wire from="(480,330)" to="(490,330)"/>
+    <wire from="(490,190)" to="(500,190)"/>
+    <wire from="(540,310)" to="(550,310)"/>
+    <wire from="(550,170)" to="(560,170)"/>
+    <wire from="(600,330)" to="(610,330)"/>
+    <wire from="(610,190)" to="(620,190)"/>
+    <wire from="(660,310)" to="(670,310)"/>
+    <wire from="(670,170)" to="(680,170)"/>
+    <wire from="(720,330)" to="(730,330)"/>
+    <wire from="(730,190)" to="(740,190)"/>
+    <wire from="(780,310)" to="(790,310)"/>
+    <wire from="(790,170)" to="(800,170)"/>
+    <wire from="(850,190)" to="(860,190)"/>
+    <wire from="(910,170)" to="(920,170)"/>
+    <wire from="(970,190)" to="(980,190)"/>
   </circuit>
 </project>
