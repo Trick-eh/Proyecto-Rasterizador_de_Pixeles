@@ -30,9 +30,9 @@
   <lib desc="#BFH-Praktika" name="10"/>
   <lib desc="#Input/Output-Extra" name="11"/>
   <lib desc="#Soc" name="12"/>
-  <lib desc="file#CalculoF.circ" name="13"/>
-  <lib desc="file#EvaluadorYRAM.circ" name="14"/>
-  <lib desc="file#GeneradorPixeles.circ" name="15"/>
+  <lib desc="file#EvaluadorYRAM.circ" name="13"/>
+  <lib desc="file#GeneradorPixeles.circ" name="14"/>
+  <lib desc="file#CalculoF.circ" name="15"/>
   <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
@@ -322,9 +322,9 @@
     <comp lib="1" loc="(260,490)" name="AND Gate">
       <a name="size" val="30"/>
     </comp>
-    <comp lib="13" loc="(430,340)" name="CalculoF"/>
-    <comp lib="14" loc="(510,520)" name="EvaluadorYRAM"/>
-    <comp lib="15" loc="(380,180)" name="GeneradorPixeles"/>
+    <comp lib="13" loc="(510,520)" name="EvaluadorYRAM"/>
+    <comp lib="14" loc="(380,180)" name="GeneradorPixeles"/>
+    <comp lib="15" loc="(430,340)" name="CalculoF"/>
     <comp lib="2" loc="(1070,330)" name="Demultiplexer">
       <a name="enable" val="true"/>
       <a name="facing" val="south"/>
@@ -478,7 +478,7 @@
     <a name="appearance" val="logisim_evolution"/>
     <a name="circuit" val="testing"/>
     <a name="circuitnamedboxfixedsize" val="true"/>
-    <a name="simulationFrequency" val="1.0"/>
+    <a name="simulationFrequency" val="64.0"/>
     <comp lib="0" loc="(1000,240)" name="Probe">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="west"/>
